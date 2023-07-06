@@ -1,0 +1,36 @@
+table {
+    width: 70%;
+    margin: auto;
+}
+
+th {
+    border: 1px solid black;
+    width: 40%;
+}
+
+.borderedDiv {
+    border: 1px solid red;
+    width: 70%;
+    margin: auto;
+}
+
+.borderedDiv p {
+    color: red;
+    text-align: center;
+}
+.marginDiv {
+    margin-left: 10%;
+}
+.media {
+    text-align: center;
+}
+
+.picHolder {
+    width: 60vw;
+    margin: 40px auto;
+}
+
+.picture {
+    width: 100%;
+    border: 8px solid orange;
+}
