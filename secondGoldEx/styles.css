@@ -35,12 +35,14 @@ a:visited {
 
 .register-button i {
     font-size: 18px;
+    width: auto;
 }
 
 .w-100 .register-button {
     width: 50%;
     border-color: white;
     color: white;
+    padding: 0.5rem;
 }
 
 .login-form {
@@ -82,3 +84,4 @@ a:visited {
 .side-logins i{
     color: #353535;
 }
+
