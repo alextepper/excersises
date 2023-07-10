@@ -1,0 +1,84 @@
+a:link,
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.side-info {
+    background: radial-gradient(ellipse at left top, #000000 0%, #c303c3 100%);
+    padding: 10rem;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.side-info p,
+.side-info h2 {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.side-info i {
+    color: white;
+    width: 100%;
+    font-size: 90px;
+    text-align: center;
+}
+
+
+.register-button i {
+    font-size: 18px;
+}
+
+.w-100 .register-button {
+    width: 50%;
+    border-color: white;
+    color: white;
+}
+
+.login-form {
+    background-color: rgb(250, 250, 250);
+    position: relative;
+}
+
+.login-form .fixed-info{
+    position: absolute;
+    text-align: center;
+    left: 0%;
+    bottom: 0;
+}
+
+.login-form h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.general-input {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0px;
+    background-color: rgb(234, 234, 234);
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.login-button {
+    width: 100%;
+    border: 0px;
+    background-color: #c303c3;
+    padding: 0.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.side-logins i{
+    color: #353535;
+}
