@@ -1,0 +1,33 @@
+* {
+    font-family: 'Belanosima', sans-serif;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+  .picHolder {
+    background-image: url("thorOdinson.jpg");
+    width: 100vw;
+    height: 92vh;
+    background-size: 135%;
+  }
+
+  .main-content {
+    width: 60%;
+    margin-left: 5rem;
+    padding-top: 30rem;
+  }
+
+  .main-content h1 {
+    font-size: 100px;
+    color: black;
+  }
+
+  .main-content p {
+    width: 70%;
+  }
+
+  .main-picture {
+    width: 100%;
+  }
