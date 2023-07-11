@@ -1,0 +1,30 @@
+section {
+    width: 5%;
+    height: 95%;
+    padding: 3%;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    margin: 3px;
+}
+
+.right {
+    align-self: flex-end;
+}
+
+.center {
+    justify-content: center;
+    margin: auto;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
