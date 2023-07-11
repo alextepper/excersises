@@ -15,6 +15,7 @@ a:visited {
 }
 
 /* NAVBAR STYLING STARTS */
+/* https://www.makeuseof.com/responsive-navigation-bar-using-html-and-css/ */
 .navbar {
     display: flex;
     align-items: center;
