@@ -1,0 +1,15 @@
+* {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(https://cdn.pixabay.com/photo/2017/06/20/22/14/man-2425121_1280.jpg) no-repeat;
+    background-size: cover;
+}
+
+.navbar-nav .nav-item:hover .nav-link {
+    border-bottom: 1px solid green;
+}
