@@ -2,33 +2,49 @@
     box-sizing: border-box;
 }
 
-section {
-    padding: 10px;
-    border: 3px solid black;
+.whole-section {
     display: grid;
+<<<<<<< HEAD:ninja-daily-challenge-css-pattern/styles.css
     grid-template-columns: 2fr 3fr;
     grid-template-rows: 2fr 3fr;
+=======
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 100px 450px 200px 100px;
+>>>>>>> 428d12417666a03e3e33f6b0b3b9521d2985cd87:excercise-two/styles.css
     /*  Example with grid area  */
     /*  grid-template-areas:
     "a . b"
     "a . c"; */
-    grid-column-gap: 2px;
-    grid-row-gap: 2px;
+    grid-gap: 4px;
+    width: 80%;
 
-    height: 100%;
     /*  OR : grid-gap: 10px;  */
+}
 
+div {
+    text-align: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    padding: auto;
+}
+
+.main-section {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    grid-gap: 4px;
+
+    grid-column: 1/span 2;
 }
 
 section>div {
     padding: 5px;
 }
 
-
-
 .header {
-    border: 1px solid orange;
-    background-color: #ffffcc;
+    background-color: #38381f;
     /*  Example with grid area  */
     /*     grid-area : c */
     grid-row: 1;
@@ -36,10 +52,9 @@ section>div {
 }
 
 .hero {
-    border: 1px solid blue;
-    background-color: #e6ffff;
+    background-color: #324d4d;
 
-    grid-row: 2/span 6;
+    grid-row: 1/span 4;
     grid-column: 1/span 1;
 
     /*  Example with grid area  */
@@ -47,54 +62,50 @@ section>div {
 }
 
 .sidebar {
-    border: 1px solid red;
-    background-color: #ffd6cc;
+    background-color: #4e2419;
     /*  Example with grid area  */
     /*     grid-area : b */
 
-    grid-row: 8/span 6;
+    grid-row: 5/span 3;
     grid-column: 1/span 1;
 }
 
 .main-content {
-    border: 1px solid red;
-    background-color: #ffd6cc;
+    background-color: #642819;
     /*  Example with grid area  */
     /*     grid-area : b */
-    grid-row: 2/span 8;
+    grid-row: 1/span 5;
     grid-column: 2;
 }
 
 .extra-content {
-    border: 1px solid blue;
-    background-color: #e6ffff;
+    background-color: #0f4848;
     /*  Example with grid area  */
     /*     grid-area : b */
-    grid-row: 10/span 8;
-    grid-column: 2;
+    grid-row: 6/span 2;
+    grid-column: 2/span 1;
 }
 
 .related-images {
-    border: 1px solid blue;
-    background-color: #e6ffff;
+    background-color: #166d6d;
     /*  Example with grid area  */
     /*     grid-area : b */
 
-    grid-column: 1;
+    grid-column: 1/span 1;
+
 }
 
 .related-posts {
-    border: 1px solid blue;
-    background-color: #e6ffff;
+    background-color: #136464;
     /*  Example with grid area  */
     /*     grid-area : b */
 
-    grid-column: 2;
+    grid-column: 2/span 1;
+
 }
 
 .footer {
-    border: 1px solid orange;
-    background-color: #ffffcc;
+    background-color: #38381f;
     /*  Example with grid area  */
     /*     grid-area : c */
 
