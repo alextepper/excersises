@@ -1,0 +1,108 @@
+* {
+	font-family: 'Barlow', sans-serif;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color:inherit;
+}
+
+body {
+	background: linear-gradient(60deg, #948231, #851942, #156683, #13775f);
+	background-size: 200% 300%;
+	animation: gradient 5s ease infinite;
+}
+
+.main-font, p{
+	color: #94a3b8;
+	text-decoration: none;
+}
+
+.height-100 {
+	height: 100vh;
+}
+
+.width-50 {
+	width: 50%;
+}
+
+.padding-10 {
+	padding: 0px 10rem;
+}
+
+
+
+
+div ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.hover-list {
+	transition: 0.3s;
+	
+	cursor: pointer;
+}
+
+.hover-list:hover {
+	box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.195);
+	background-color: rgba(255, 255, 255, 0.048);
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.contacts-list {
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.contacts-list:hover {
+	color: white;
+}
+.contacts-list i {
+	transition: 0.3s;
+}
+.contacts-list:hover i {
+	transition: all 0.3s ease;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+.contacts-list:active {
+	color: white;
+}
+
+.mt-10 {
+	margin-top: 10rem;
+}
+
+@media (max-width: 992px) {
+	.main-content .text-light{
+		width: 100%;
+		height: fit-content;
+	}
+
+	.height-100 {
+		height: fit-content;
+	}
+	.width-50 {
+		width: 100%;
+	}
+	.padding-10 {
+		padding: 0px 3rem;
+	}
+  }
+
+
+
+
