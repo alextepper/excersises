@@ -1,5 +1,6 @@
 import random
 import string
+from faker import Faker
 import datetime
 from datetime import date
 # Exercise 2: Import
@@ -44,3 +45,14 @@ def days_till_date(given_date):
 def minutes_since_birth(given_date):
     delta = datetime.datetime.now() - given_date
     return delta.total_seconds()/60
+
+
+def create_fake_info(amount):
+    fake = Faker('en_US')
+    list = []
+    for _ in range(amount):
+        name = fake.name()
+        address = fake.address()
+        lang = fake.language_code()
+        list.append({'name': name, 'address': address, 'language': lang})
+    return list
