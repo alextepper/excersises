@@ -2,8 +2,8 @@ import math
 
 class Cirlce:
     def __init__(self, radius=None, diameter=None):
-        if radius is not None and diameter is not None:
-            raise ValueError("Both radius and diameter cannot be specified at the same time.")
+        if radius is None and diameter is None:
+            raise ValueError("You have to specify at least one parameter")
 
         if radius is not None:
             self.radius = radius
