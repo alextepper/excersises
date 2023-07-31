@@ -3,10 +3,10 @@ import random
 
 def get_words_from_file():
     result = []
-    words = open('sowpods.txt')
-    for line in words:
-        result.append(line.replace("\n", ''))
-    return result
+    with open('sowpods.txt') as words:
+        for line in words:
+            result.append(line.replace("\n", ''))
+        return result
 
 
 def get_random_sentence(length):

@@ -21,7 +21,7 @@ class Currency:
             return self.amount + other
         elif type(other) == Currency:
             if self.currency == other.currency:
-                return self.amount + other.amount
+                return Currency(self.currency, self.amount + other.amount)
             else:
                 raise Exception(f"Cannot add between Currency type {self.currency} and {other.currency}")
         else:

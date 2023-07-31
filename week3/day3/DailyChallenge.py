@@ -15,7 +15,7 @@ class Cirlce:
             raise ValueError("Either radius or diameter must be specified.")
 
     def get_area(self):
-        return self.radius*math.pi**2
+        return math.pi*self.radius**2
 
     def __str__(self):
         return f"The circle's radius is {self.radius}, and it's diameter is {self.diameter}"
@@ -25,6 +25,12 @@ class Cirlce:
 
     def __gt__(self, other):
         if self.radius > other.radius:
+            return True
+        else:
+            return False
+
+    def __lt__(self, other):
+        if self.radius < other.radius:
             return True
         else:
             return False
