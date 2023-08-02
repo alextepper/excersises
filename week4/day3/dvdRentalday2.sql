@@ -115,6 +115,6 @@
 -- inner join customer c
 -- on r.customer_id = c.customer_id
 -- where c.first_name = 'Matthew' and c.last_name = 'Mahan'
--- and f.description like '%Boat'
-											  
+-- and (f.description ilike '%boat%' or f.title ilike '%boat%')
+-- ORDER BY film.replacement_cost DESC											  
 
