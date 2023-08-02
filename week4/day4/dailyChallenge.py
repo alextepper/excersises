@@ -37,7 +37,7 @@ def get_list_of_countries():
             name = country['name']['common']
             capital = country['capital'][0] if 'capital' in country and country['capital'] else 'N/A'
             flag = country['flags']['svg']
-            subregion = country['subregion'][0] if 'subregion' in country and country['subregion'] else 'N/A'
+            subregion = country['subregion'] if 'subregion' in country and country['subregion'] else 'N/A'
             population = country['population']
             list_of_countries.append(Country(name, capital, flag, subregion, population))
         return list_of_countries
