@@ -73,25 +73,12 @@ sorted_array = float_matrix[sorted_indices]
 print(sorted_array)
 
 # How to swap two rows of an array? You can do this using array indexing.
-array1 = np.array([[0, 1, 2],
+matrix1 = np.array([[0, 1, 2],
                    [3, 4, 5],
                    [6, 7, 8]])
+matrix1[[0, 1]] = matrix1[[1, 0]]
 
-def swap_rows(array, row1, row2):
-    """Swap rows `row1` and `row2` in `array`."""
-    # Make sure the input array is a numpy array
-    array = np.array(array)
-
-    # Copy the rows to be swapped
-    temp_row1 = array[row1].copy()
-    temp_row2 = array[row2].copy()
-
-    # Perform the swap
-    array[row1] = temp_row2
-    array[row2] = temp_row1
-
-    return array
-print(swap_rows(array1, 0,1))
+print(matrix1)
 
 # Given an array C that is a bincount*, how to produce an array A such that np.bincount(A) == C? Use np.repeat.
 C = np.array([2, 3, 0, 1, 0, 2])
