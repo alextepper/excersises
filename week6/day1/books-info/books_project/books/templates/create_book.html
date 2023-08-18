@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Book</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Create a New Book</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Render the form fields -->
+            <input type="submit" value="Submit">
+        </form>
+
+        <a href="{% url 'list_books' %}">Back to book list</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f8fa;
+    color: #333;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #4a4a4a;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+input[type="text"], input[type="date"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    font-size: 16px;
+}

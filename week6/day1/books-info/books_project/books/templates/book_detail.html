@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.title }} - Details</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Generate an absolute URL -->
+        <a href="{% url 'list_books' %}" class="btn">Back to List</a>
+
+        <h1>{{ book.title }}</h1>
+        <h3>By {{ book.author }}</h3>
+        <p><strong>Published Date:</strong> {{ book.published_date }}</p>
+        <p><strong>Page Count:</strong> {{ book.page_count }}</p>
+        <p><strong>Categories:</strong> {{ book.categories }}</p>
+        <img src="{{ book.thumbnail_url }}" alt="{{ book.title }} thumbnail">
+        <p>{{ book.description }}</p>
+    </div>
+</body>
+</html>

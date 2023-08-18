@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+</head>
+<body>
+    <div class="container">
+    <h1>List of Books</h1>
+    <ul>
+    {% for book in books %}
+    <li>
+        <!-- Wrap the title with an anchor tag that points to the detail view for this book -->
+        <strong><a href="{% url 'book_detail' id=book.id %}">{{ book.title }}</a></strong> by {{ book.author }}<br>
+        Published Date: {{ book.published_date }}<br>
+        <small>{{ book.description }}</small><br>
+        Categories: {{ book.categories }}
+    </li>
+    <hr>
+    {% endfor %}
+</ul>
+    </div>
+</body>
+</html>
