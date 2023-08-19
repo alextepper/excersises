@@ -1,10 +1,16 @@
-from rest_framework import generics, permissions
+from rest_framework import generics
 from .models import Department, Employee, Task
 from .serializers import DepartmentSerializer, EmployeeSerializer, TaskSerializer
 from .permissions import IsDepartmentAdmin
 
 
 class DepartmentListView(generics.ListCreateAPIView):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer
+    permission_classes = [IsDepartmentAdmin]
+
+
+class DepartmentDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
     permission_classes = [IsDepartmentAdmin]
@@ -32,3 +38,4 @@ class TaskUpdateView(generics.UpdateAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     permission_classes = [IsDepartmentAdmin]
+
