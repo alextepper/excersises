@@ -1,5 +1,7 @@
 # views.py
-from django.utils.datetime_safe import date
+from django.db.models import Count
+from django.db.models.functions import TruncMonth
+from django.utils.datetime_safe import date, datetime
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -251,4 +253,71 @@ class VehiclesAtStationView(APIView):
     def get(self, request, station_id):
         vehicles = VehicleAtRentalStation.objects.filter(station_id=station_id, departure_date__isnull=True)
         data = [{"vehicle_id": vehicle.vehicle_id, "arrival_date": vehicle.arrival_date} for vehicle in vehicles]
+        return Response(data, status=status.HTTP_200_OK)
+
+
+class MonthlyRentalStats(APIView):
+
+    def get(self, request):
+        # Grouping by month
+        stats = (Rental.objects
+                 .annotate(month=TruncMonth('rental_date'))
+                 .values('month')
+                 .annotate(rental_count=Count('id'))
+                 .order_by('month'))
+
+        # Transforming queryset to desired output format
+        data = {item['month'].strftime('%Y-%m'): item['rental_count'] for item in stats}
+
+        return Response(data)
+
+
+class PopularRentalStation(APIView):
+
+    def get(self, request):
+        # Counting rentals per station and ordering by count in descending order
+        stats = (Rental.objects
+                 .values('station__name')  # use the name of the associated station
+                 .annotate(rental_count=Count('id'))
+                 .order_by('-rental_count'))
+
+        # Transforming queryset to desired output format
+        data = {item['station__name']: item['rental_count'] for item in stats}
+
+        return Response(data)
+
+
+class PopularVehicleTypeView(APIView):
+    def get(self, request, *args, **kwargs):
+        counts = (
+            Rental.objects.values('vehicle__vehicle_type__name')
+            .annotate(total_rented=Count('vehicle__vehicle_type'))
+            .order_by('-total_rented')
+        )
+        data = {item['vehicle__vehicle_type__name']: item['total_rented'] for item in counts}
+        return Response(data, status=status.HTTP_200_OK)
+
+
+class PopularVehicleTypeView(APIView):
+    def get(self, request, *args, **kwargs):
+        start_date = self.request.query_params.get('start_date', None)
+        end_date = self.request.query_params.get('end_date', None)
+
+        rentals = Rental.objects.all()
+
+        if start_date and end_date:
+            try:
+                formatted_start_date = datetime.strptime(start_date, '%Y-%m-%d').date()
+                formatted_end_date = datetime.strptime(end_date, '%Y-%m-%d').date()
+                rentals = rentals.filter(rental_date__range=(formatted_start_date, formatted_end_date))
+            except ValueError:
+                return Response({"error": "Invalid date format. Use 'YYYY-MM-DD'."}, status=status.HTTP_400_BAD_REQUEST)
+
+        counts = (
+            rentals.values('vehicle__vehicle_type__name')
+            .annotate(total_rented=Count('vehicle__vehicle_type'))
+            .order_by('-total_rented')
+        )
+
+        data = {item['vehicle__vehicle_type__name']: item['total_rented'] for item in counts}
         return Response(data, status=status.HTTP_200_OK)
