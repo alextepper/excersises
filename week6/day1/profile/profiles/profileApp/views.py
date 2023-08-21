@@ -10,15 +10,18 @@ from .models import Profile
 @require_http_methods(["POST"])
 def create_profile(request):
     try:
-        data = json.loads(request.body)
-        name = data['name']
-        email = data['email']
-        profile = Profile(name=name, email=email)
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+
+        if not name or not email:
+            return JsonResponse({'status': 'error', 'message': 'name or email missing'}, status=400)
+
+        profile = Profile.objects.create(name=name, email=email)
         profile.save()
+
         return JsonResponse({'status': 'success', 'message': 'Profile created successfully'}, status=201)
     except Exception as e:
         return JsonResponse({'status': 'error', 'message': str(e)}, status=400)
-
 
 @csrf_exempt
 @require_http_methods(["DELETE"])
