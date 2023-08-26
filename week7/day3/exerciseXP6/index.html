@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Invoking Function</title>
+</head>
+
+<body>
+
+    <div id="output"></div>
+
+    <script>
+        (function (numChildren, partnerName, geoLocation, jobTitle) {
+            const outputDiv = document.getElementById('output');
+            const sentence = `You will be a ${jobTitle} in ${geoLocation}, and married to ${partnerName} with ${numChildren} kids.`;
+            outputDiv.innerText = sentence;
+        })(2, 'Alice', 'New York', 'Software Developer');
+    </script>
+
+</body>
+
+</html>
