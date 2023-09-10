@@ -1,0 +1,64 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input, button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input {
+    flex: 1;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004391;
+}
+
+#gifsContainer {
+    display: grid;
+    gap: 20px;
+}
+
+div > img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+div > button {
+    margin-top: 10px;
+    background-color: #dc3545;
+}
+
+div > button:hover {
+    background-color: #c82333;
+}
+
+div > button:active {
+    background-color: #bd2130;
+}
