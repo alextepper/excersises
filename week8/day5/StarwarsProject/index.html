@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Character</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="logo"></div>
+    <div class="loader" style="display: none;">
+        <i class="fas fa-spinner fa-spin"></i> Loading...
+    </div>
+    <div class="error-message"></div>
+    <div class="character-info">
+        <h2 id="name"></h2>
+        <p><strong>Height:</strong> <span id="height"></span></p>
+        <p><strong>Gender:</strong> <span id="gender"></span></p>
+        <p><strong>Birth Year:</strong> <span id="birthYear"></span></p>
+        <p><strong>Home World:</strong> <span id="homeWorld"></span></p>
+    </div>
+    <button id="loadCharacter">Load Random Character</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
