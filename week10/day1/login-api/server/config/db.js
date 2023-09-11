@@ -4,7 +4,8 @@ const db = require('knex')({
         host: 'localhost',
         user: 'postgres',
         password: 'root',
-        database: 'blogApi'
+        database: 'userdb',
+        port: 5432
     }
 });
 

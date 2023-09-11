@@ -1,19 +1,23 @@
-const pool = require('../config/db');
+const db = require('../config/db');
 
 const getAllBooks = async () => {
-    const result = await pool.query('SELECT * FROM books');
-    return result.rows;
+    return await db.select('*').from('books');
 };
 
 const getBookById = async (id) => {
-    const result = await pool.query('SELECT * FROM books WHERE id = $1', [id]);
-    return result.rows[0];
+    return await db.select('*').from('books').where({ id }).first();
 };
 
 const addBook = async (book) => {
     const { title, author, publishedYear } = book;
-    const result = await pool.query('INSERT INTO books(title, author, publishedYear) VALUES($1, $2, $3) RETURNING *', [title, author, publishedYear]);
-    return result.rows[0];
+    return await db('books').insert({
+        title: title,
+        author: author,
+        publishedyear: publishedYear
+    })
+    .returning('*')
+    .then(rows => rows[0])
+    .catch(err => console.log(err.message));
 };
 
 module.exports = { getAllBooks, getBookById, addBook };
