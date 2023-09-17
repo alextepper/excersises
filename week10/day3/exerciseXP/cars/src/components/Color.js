@@ -5,7 +5,7 @@ const Color = () => {
 
   useEffect(() => {
     alert("useEffect reached");
-  }, []); // The empty array ensures that useEffect is only called on the initial render
+  }, []);
 
   const changeColor = () => {
     setFavoriteColor("blue");
